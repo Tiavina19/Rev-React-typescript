@@ -5,7 +5,7 @@ import "./TaskManager.css";
 export const TaskManager: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [searchKeyword, setSearchKeyword] = useState<string>("");
-  const { completeTask, updateTask, addTask, filterTasks } = useTaskManager(); // Retiré tasks
+  const { completeTask, updateTask, addTask, filterTasks } = useTaskManager();
 
   const handleSearch = (ev: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchKeyword(ev.target.value);
@@ -41,7 +41,7 @@ export const TaskManager: React.FC = () => {
             <div className="task">
               <input
                 type="text"
-                placeholder="Add new task"
+                placeholder="Edit task"
                 value={task.title}
                 onChange={(e) => updateTask(task.id, { title: e.target.value })}
               />
